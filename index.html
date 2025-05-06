@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>amir cloud coursework</title>
+    </head>
+    <body>
+        <h1>query execution</h1>
+
+        <button onclick="runQuery1()">query1</button>
+        <button onclick="runQuery2()">query2</button>
+        
+        <script>
+            async function runQuery1(params) {
+                const res = await fetch('/query1');
+                const data = await res.json();
+                document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+            }
+
+            async function runQuery2(params) {
+                const res = await fetch('/query2');
+                const data = await res.json();
+                document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+            }
+        </script>
+    </body>
+</html>
